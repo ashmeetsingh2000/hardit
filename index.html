@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,49 +21,51 @@
 
     <main>
 
-        <!-- Hero -->
-        <section id="heroVideo">
-            <!-- <div class="hero-video-container">
+        <div id="loader" class="loader">
 
-                <video
-                    class="hero-video"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                >
-                    <source src="assests/VictorPaul.mp4" type="video/mp4">
-                </video>
+            <div class="top_triangle_box">
+                <img src="assests/loadertop.webp" alt="">
+            </div>
 
-            </div> -->
-        </section>
+            <div class="bottom_triangle_box">
+                <img src="assests/loaderbottom.webp" alt="">
+            </div>
 
-        <!-- Features -->
-        <section id="features">
+            <div class="left_triangle_box">
+                <img src="assests/loaderleft.webp" alt="">
+            </div>
 
-        </section>
+            <div class="right_triangle_box">
+                <img src="assests/loaderright.webp" alt="">
+            </div>
 
-        <!-- Benefits -->
-        <section id="benefits">
+            <button class="loader-stamp">
+                <img src="assests/loadermiddle.webp"id="loaderStamp" alt="Open">
+            </button>
 
-        </section>
+        </div>
 
-        <!-- Testimonials -->
-        <section id="testimonials">
-
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq">
-
-        </section>
-
-        <!-- Footer -->
-        <footer>
-
-        </footer>
+        <div id="main_page_section"> 
+            next to develop
+        </div>
 
     </main>
 
+    <script>
+        const loader = document.getElementById("loader");
+        const stamp = document.getElementById("loaderStamp");
+        stamp.addEventListener("click", () => {
+            loader.classList.add("open");
+            setTimeout(() => {
+                loader.classList.add("envelope-open");
+            },2000);
+
+            setTimeout(() => {
+                loader.classList.add("finished");
+            },4100);
+
+        });
+    </script>
 </body>
+
 </html>
