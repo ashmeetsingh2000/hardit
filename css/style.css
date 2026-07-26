@@ -23,6 +23,22 @@ main{
     cursor: pointer;
     z-index: 10;
 }
+.stamp-text{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    color: var(--color-primary);
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.stamp-text span{
+    display: block;
+    transform: translateY(100px);
+}
 
 .loader-stamp img{
     display: inline;
