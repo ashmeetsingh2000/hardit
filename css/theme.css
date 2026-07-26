@@ -1,0 +1,166 @@
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+/*
+Primary Font
+Appears to be the site's custom font.
+Replace with @font-face if you obtain the font files.
+*/
+
+:root {
+
+    --font-primary: "newtemplate", sans-serif;
+
+    /*
+        Backup font stack
+        Matches the website closely
+    */
+
+    --font-fallback:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    --font-heading: "newtemplate", var(--font-fallback);
+
+    --font-body: "newtemplate", var(--font-fallback);
+
+    --font-serif: "Times New Roman", serif;
+}
+
+
+/* ==========================================================
+   COLORS
+========================================================== */
+
+:root {
+
+    /* Brand */
+
+    --color-primary: #66021F;
+    --color-primary-dark: #660120;
+
+    /* Accent */
+
+    --color-accent: #F95D51;
+    --color-link: #007EFF;
+
+    /* Neutral */
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-background: #FFFAF8;
+
+    /* Text */
+
+    --color-text: #000000;
+    --color-text-light: #5F5F5F;
+    --color-text-white: #FFFFFF;
+
+    /* Borders */
+
+    --color-border: rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY SCALE
+========================================================== */
+
+:root {
+
+    --fs-display: 56px;
+    --fs-h1: 42px;
+    --fs-h2: 34px;
+    --fs-h3: 28px;
+
+    --fs-body-lg: 20px;
+    --fs-body: 16px;
+    --fs-small: 14px;
+    --fs-caption: 12px;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 800;
+
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-relaxed: 1.6;
+
+}
+
+
+/* ==========================================================
+   SPACING
+========================================================== */
+
+:root {
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+}
+
+
+/* ==========================================================
+   RADIUS
+========================================================== */
+
+:root {
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 36px;
+    --radius-pill: 999px;
+
+}
+
+
+/* ==========================================================
+   SHADOWS
+========================================================== */
+
+:root {
+
+    --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
+
+    --shadow-md: 0 12px 30px rgba(0,0,0,.12);
+
+    --shadow-lg: 0 20px 60px rgba(0,0,0,.18);
+
+}
+
+
+/* ==========================================================
+   TRANSITIONS
+========================================================== */
+
+:root {
+
+    --transition-fast: .2s ease;
+
+    --transition-normal: .3s ease;
+
+    --transition-slow: .5s ease;
+
+}

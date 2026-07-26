@@ -1,0 +1,256 @@
+/* =============================================================
+   RESET & BASE
+   ============================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: 'Ovo', serif; /* primary font from original */
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =============================================================
+   HERO / ENVELOPE SECTION
+   ============================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 850px; /* matches t396 artboard height */
+  background: #f5f5f5; /* fallback */
+}
+.hero img.hero-bg-left,
+.hero img.hero-bg-right {
+  position: absolute;
+  top: -13px; /* from original data-field-top-value */
+  width: 467px; /* original width */
+  height: auto;
+}
+.hero img.hero-bg-left {
+  left: calc(50% - 600px + 98px);
+}
+.hero img.hero-bg-right {
+  left: calc(50% - 600px + 635px);
+}
+.hero .hero-content {
+  position: absolute;
+  top: 468px; /* from text element */
+  left: calc(50% - 600px + 535px);
+  width: 130px;
+  text-align: center;
+  color: #66021f; /* title color */
+}
+.hero .hero-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+.hero .hero-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+}
+.hero .envelope-btn {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 14px;
+  background: #66021f;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.hero .envelope-btn:hover {
+  background: #55011b;
+}
+
+/* Envelope opened state – simple fade/scale of background images */
+.hero.opened img.hero-bg-left,
+.hero.opened img.hero-bg-right {
+  animation: envelopeOpen 0.8s forwards;
+}
+@keyframes envelopeOpen {
+  from { transform: scale(1) translateY(0); opacity: 1; }
+  to   { transform: scale(1.2) translateY(-30px); opacity: 0.6; }
+}
+
+/* =============================================================
+   MAIN SECTIONS
+   ============================================================= */
+main {
+  padding: 1rem;
+  max-width: 430px; /* respect max mobile width */
+  margin: 0 auto;
+}
+section {
+  margin-bottom: 2rem;
+}
+section h2.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #66021f;
+  margin-bottom: 0.5rem;
+}
+.intro .intro-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Countdown */
+.countdown {
+  text-align: center;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.countdown-timer {
+  font-family: 'Ovo', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #66021f;
+}
+.countdown-label {
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: #555555;
+}
+
+/* Schedule */
+.schedule-list {
+  list-style: none;
+  padding-left: 0;
+}
+.schedule-list li {
+  font-size: 14px;
+  margin-bottom: 0.3rem;
+}
+
+/* Location */
+.location p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Dress Code */
+.dresscode p,
+.dresscode ul {
+  font-size: 14px;
+}
+.dresscode ul {
+  list-style: disc inside;
+  margin-top: 0.4rem;
+}
+
+/* Details */
+.details p {
+  font-size: 14px;
+  margin-bottom: 0.6rem;
+}
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+.contact-list li {
+  margin-bottom: 0.3rem;
+}
+
+/* RSVP CTA */
+.rsvp .rsvp-btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 14px;
+  background: #66021f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.rsvp .rsvp-btn:hover {
+  background: #55011b;
+}
+
+/* =============================================================
+   DIALOG (RSVP POPUP) – visual only
+   ============================================================= */
+.rsvp-dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 300px;
+  width: 90%;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.rsvp-dialog h3 {
+  font-size: 18px;
+  margin-bottom: 0.8rem;
+  color: #66021f;
+}
+.rsvp-dialog button.close-dialog {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ccc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* =============================================================
+   RESPONSIVE BREAKPOINTS (360‑430px)
+   ============================================================= */
+@media (max-width: 430px) {
+  .hero {
+    height: 700px; /* scale down proportionally */
+  }
+  .hero .hero-content {
+    left: calc(50% - 200px + 20px);
+  }
+}
+@media (max-width: 375px) {
+  .hero .hero-content {
+    left: calc(50% - 190px + 15px);
+  }
+}
+@media (max-width: 360px) {
+  .hero .hero-content {
+    left: calc(50% - 180px + 10px);
+  }
+}
+
+/* =============================================================
+   ANIMATIONS (scroll reveal – optional, pure CSS using :target)
+   ============================================================= */
+/* Simple fade‑in for sections when they become visible */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section:target, section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================================
+   COMMENTS – replace assets where indicated
+   ============================================================= */
+/* Replace hero-bg-left & hero-bg-right with your own images if needed */
+/* Replace any missing image in the images/ folder with the correct file */
+/* If you add new fonts, update the @font-face declarations below */

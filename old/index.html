@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viktor and Paula – Wedding</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="t-body" style="margin:0;">
+
+  <!-- HERO / ENVELOPE SECTION -->
+  <header class="hero">
+    <!-- Envelope background images (left & right) -->
+    <img src="images/Polygon_4.png" alt="" class="hero-bg-left" />
+    <img src="images/Polygon_3.png" alt="" class="hero-bg-right" />
+    <div class="hero-content">
+      <h1 class="hero-title">Viktor and Paula</h1>
+      <p class="hero-subtitle">Wedding Day 05.07.26</p>
+      <button class="envelope-btn" id="envelopeBtn">Click to open</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Introduction Section -->
+    <section class="intro">
+      <p class="intro-text">
+        Dear Friends and Family,
+        As we get ready to say “I do,” we feel grateful for the wonderful people in our lives. Your support means the world to us, and we would be honored to have you with us as we begin our life together.
+      </p>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown">
+      <div class="countdown-timer">
+        <span id="days">00</span> Days :
+        <span id="hours">00</span> Hours :
+        <span id="minutes">00</span> Minutes :
+        <span id="seconds">00</span> Seconds
+      </div>
+      <p class="countdown-label">The Celebration Begins In</p>
+    </section>
+
+    <!-- Schedule of Events -->
+    <section class="schedule">
+      <h2 class="section-title">Schedule of Events</h2>
+      <ul class="schedule-list">
+        <li><strong>Wedding Ceremony</strong> – 16:00</li>
+        <li><strong>Cocktail Hour</strong> – 17:00</li>
+        <li><strong>Dinner</strong> – 19:00</li>
+        <li><strong>Party</strong> – 20:00</li>
+      </ul>
+    </section>
+
+    <!-- Location -->
+    <section class="location">
+      <h2 class="section-title">Location</h2>
+      <p>Chateau de Paon<br />Address: Petit Chemin de Saint-Gilles – 1300 Arles, France</p>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="dresscode">
+      <h2 class="section-title">Dress Code</h2>
+      <p>We kindly invite you to dress in elegant attire that reflects the style and spirit of our special day.</p>
+      <ul>
+        <li>Gentlemen: Well‑tailored suits with classic dress shoes are preferred.</li>
+        <li>Ladies: Formal dresses in elegant, polished styles are encouraged.</li>
+      </ul>
+    </section>
+
+    <!-- Details / Gift Info -->
+    <section class="details">
+      <h2 class="section-title">Details</h2>
+      <p>For additional information or questions, please contact the wedding organizers.</p>
+      <p>Your presence is the greatest gift to us. However, if you wish to honor us with a present, a contribution toward our future would be sincerely appreciated.</p>
+      <ul class="contact-list">
+        <li>Ameila – +31 6845965887</li>
+        <li>Email – <a href="mailto:example@example.com">example@example.com</a></li>
+      </ul>
+    </section>
+
+    <!-- RSVP CTA -->
+    <section class="rsvp">
+      <h2 class="section-title">Confirm Your Attendance</h2>
+      <button class="rsvp-btn" id="rsvpBtn">RSVP</button>
+    </section>
+  </main>
+
+  <!-- RSVP POPUP (visual only) -->
+  <dialog class="rsvp-dialog" id="rsvpDialog">
+    <h3>RSVP</h3>
+    <p>Please RSVP before March 20.</p>
+    <!-- Visual placeholder – no functional form -->
+    <button class="close-dialog" id="closeDialog">Close</button>
+  </dialog>
+
+  <!-- AUDIO (optional) -->
+  <audio controls src="audio/Ordinary%20Lyrics.mp3" style="display:none;"></audio>
+
+  <footer class="footer">
+    <p>Hope to see you there! Viktor and Paula</p>
+  </footer>
+
+  <script>
+    // Envelope opening animation (simple toggle)
+    const envelopeBtn = document.getElementById('envelopeBtn');
+    envelopeBtn.addEventListener('click', () => {
+      document.querySelector('.hero').classList.toggle('opened');
+    });
+
+    // RSVP dialog handling
+    const rsvpBtn = document.getElementById('rsvpBtn');
+    const rsvpDialog = document.getElementById('rsvpDialog');
+    const closeDialog = document.getElementById('closeDialog');
+    rsvpBtn.addEventListener('click', () => rsvpDialog.showModal());
+    closeDialog.addEventListener('click', () => rsvpDialog.close());
+
+    // Simple countdown (placeholder – set target date as needed)
+    const target = new Date('2026-07-05T00:00:00'); // adjust to actual ceremony date
+    function updateCountdown() {
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) return;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hrs).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(mins).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(secs).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
