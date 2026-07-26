@@ -40,33 +40,73 @@
             </div>
 
             <button class="loader-stamp">
-                <img src="assests/loadermiddle.webp"id="loaderStamp" alt="Open">
+                <img src="assests/loadermiddle.webp" id="loaderStamp" alt="Open">
             </button>
-            <button class="stamp-text"><span>Click to Open<span></button>
+            <button class="stamp-text" id="loaderStampText"><span>Click to Open<span></button>
 
         </div>
 
-        <div id="main_page_section"> 
-            next to develop
+        <div id="main_page_section">
+            <section id="heroVideo">
+                <div class="videoContainer">
+                    <video class="hero-video" autoplay muted loop playsinline>
+                        <source src="assests/VictorPaul.mp4" type="video/mp4">
+                    </video>
+                    <div class="overlaytext">
+                        <span class="fade-in-up delay-200">Hardit Singh</span>
+                        <span class="fade-in-up delay-200">&</span>
+                        <span class="fade-in-up delay-200">Jaipreet kaur</span>
+                    </div>
+                </div>
+                <div class="firstFlowerGarden">
+
+                    <div class="flowerabsolute flower_no1">
+                        <img class="scale-fade-in delay-200" src="assests/flowergarden1/flower1.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no2">
+                        <img class="scale-fade-in delay-800" src="assests/flowergarden1/flower2.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no3">
+                        <img class="scale-fade-in delay-200" src="assests/flowergarden1/flower2up.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no4">
+                        <img class="scale-fade-in delay-800" src="assests/flowergarden1/flower3.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no5">
+                        <img class="scale-fade-in delay-200" src="assests/flowergarden1/flower4.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no6">
+                        <img class="scale-fade-in delay-800" src="assests/flowergarden1/flower5.webp" alt="">
+                    </div>
+
+                    <div class="flowerabsolute flower_no7">
+                        <img class="scale-fade-in delay-200" src="assests/flowergarden1/flower6.webp" alt="">
+                    </div>
+
+                </div>
+                <div class="welcomeText">
+                    <span class="fade-in-up delay-200">Dear Friends and Family</span>
+                    <br>
+                    <p class="fade-in-up delay-400">
+                        As we get ready to say “I do,” we feel grateful for the wonderful people in our lives.
+                    </p>
+                    <br>
+                    <p class="fade-in-up delay-600">
+                        Your support means the world to us, and we would be honored to have you with us as we begin our
+                        life together.
+                    </p>
+                </div>
+            </section>
         </div>
 
     </main>
 
-    <script>
-        const loader = document.getElementById("loader");
-        const stamp = document.getElementById("loaderStamp");
-        stamp.addEventListener("click", () => {
-            loader.classList.add("open");
-            setTimeout(() => {
-                loader.classList.add("envelope-open");
-            },2000);
-
-            setTimeout(() => {
-                loader.classList.add("finished");
-            },4100);
-
-        });
-    </script>
+    <script src="assests/js/script.js"></script>
 </body>
 
 </html>

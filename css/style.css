@@ -6,7 +6,7 @@
 }
 
 main{
-    width: 1800px;
+    width: 1200px;
     max-width: 100%;
     height: max-content;
     margin: 0 auto;
@@ -31,9 +31,11 @@ main{
     transform: translate(-50%, -50%);
     color: var(--color-primary);
     font-size: 25px;
+    font-family: "Newsreader", serif;
     border: none;
     background: none;
     cursor: pointer;
+    transition: opacity 1.5s ease;
 }
 .stamp-text span{
     display: block;
@@ -49,10 +51,13 @@ main{
         transform 2.5s cubic-bezier(.22,.61,.36,1),
         opacity 2.5s ease;
 }
-/* Stamp */
+
 /* Stamp disappears */
 .loader.open .loader-stamp img{
     transform:scale(1.4);
+    opacity:0;
+}
+.loader.open #loaderStampText{
     opacity:0;
 }
 
@@ -61,6 +66,7 @@ main{
     width:100%;
     height:55vh;
     position:fixed;
+    left: 0;
     z-index:9;
     overflow:hidden;
 
@@ -82,6 +88,7 @@ main{
     width:100%;
     height:62vh;
     position:fixed;
+    left: 0;
     bottom:0;
     z-index:8;
     overflow:hidden;
@@ -148,9 +155,6 @@ main{
 }
 /* right triangle */
 
-
-
-
 /* Envelope opens */
 
 .loader.envelope-open .top_triangle_box{
@@ -184,6 +188,209 @@ main{
 
 
 /* ------------------------------ main page section ------------------------------ */
-#main_page_section{
+#heroVideo{
+    width: 100%;
+    padding: 0 0 60px 0;
+    background-color: var(--color-primary);
+    overflow: hidden;
+}
+.videoContainer{
+    width:440px;
+    height:760px;
+    margin: 0 auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlaytext{
+
+    position:absolute;
+    inset:0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    pointer-events:none;
+
+    color:#fff;
+    text-align:center;
+    font-family: "AlexBrush", serif;
+}
+.overlaytext span{
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+.firstFlowerGarden{
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+/* Wrapper (position only) */
+.flowerabsolute{
+    width: max-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Image (animation only) */
+.firstFlowerGarden img{
+    width: max-content;
+}
+
+.flower_no1{
+    transform: translate(-280px, -180px);
+    z-index: 5;
+}
+
+.flower_no2{
+    transform: translate(-195px, -155px);
+    z-index: 6;
+}
+
+.flower_no3{
+    transform: translate(-140px, -210px);
+    z-index: 5;
+}
+
+.flower_no4{
+    transform: translate(-100px, -165px);
+    z-index: 7;
+}
+
+.flower_no5{
+    transform: translate(-20px, -230px);
+    z-index: 5;
+} 
+
+.flower_no5 img{
+    width: 200px;
+}
+
+.flower_no6{
+    transform: translate(45px, -150px);
+    z-index: 5;
+}
+
+.flower_no7{
+    transform: translate(80px, -300px);
+    z-index: 5;
+}
+
+.flower_no7 img{
+    width: 250px;
+}
+
+
+
+
+
+
+
+
+
+.welcomeText{
+    width:440px;
+    max-width: 100%;
+    margin: 0 auto;
+    color: #fffaf8;
+}
+.welcomeText span{
+    display: block;
+    font-size: 40px;
+    padding: 0 !important;
+    text-align:center;
+    font-family: "AlexBrush", serif;    
+}
+.welcomeText p{
+    font-size: 25px;
+    padding: 0 40px;
+    text-align:center;
+    font-family: "Newsreader", serif;
 }
 /* ------------------------------ main page section ------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fade In From Bottom */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.fade-in-up.show{
+    visibility: visible;
+    animation: fadeInUp 1.2s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+
+@keyframes bloom {
+
+    from{
+        opacity: 0;
+        transform: scale(.2);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.scale-fade-in{
+    opacity: 0;
+    transform: scale(.2);
+    transform-origin: center bottom;
+}
+
+.scale-fade-in.show{
+    animation: bloom 1s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.delay-200 { animation-delay: .2s; }
+.delay-400 { animation-delay: .4s; }
+.delay-800 { animation-delay: .8s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1600 { animation-delay: 1.6s; }
+.delay-1800 { animation-delay: 1.8s; }
+.delay-2000 { animation-delay: 2s; }
