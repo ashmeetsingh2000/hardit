@@ -487,7 +487,7 @@ main{
 }
 .EventsDetails a{
     text-decoration: underline;
-    color: inherit;
+    color: #72BCD4 !important;
 }
 
 
@@ -730,6 +730,7 @@ main{
 
 .delay-200 { animation-delay: .2s; }
 .delay-400 { animation-delay: .4s; }
+.delay-600 { animation-delay: .6s; }
 .delay-800 { animation-delay: .8s; }
 .delay-1200 { animation-delay: 1.2s; }
 .delay-1600 { animation-delay: 1.6s; }

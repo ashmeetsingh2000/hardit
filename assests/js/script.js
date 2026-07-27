@@ -21,7 +21,7 @@ const observer = new IntersectionObserver((entries) => {
 function startScrollAnimations() {
 
     document
-        .querySelectorAll(".fade-in-up, .scale-fade-in")
+        .querySelectorAll(".fade-in-up")
         .forEach(element => observer.observe(element));
 
 }
@@ -29,6 +29,29 @@ function animateFirstFlowerGarden() {
 
     document
         .querySelectorAll("#firstFlowerGarden .scale-fade-in")
+        .forEach(el => el.classList.add("show"));
+
+}
+
+const secondFlowerGarden = document.getElementById("secondFlowerGarden");
+const observer2 = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animatesecondFlowerGarden();
+            observer.unobserve(entry.target); // Run only once
+        }
+    });
+}, {
+    root: null,
+    rootMargin: "0px 0px -100px 0px",
+    threshold: 0
+});
+
+observer2.observe(secondFlowerGarden);
+function animatesecondFlowerGarden() {
+
+    document
+        .querySelectorAll("#secondFlowerGarden .scale-fade-in")
         .forEach(el => el.classList.add("show"));
 
 }
