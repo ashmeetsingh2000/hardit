@@ -1,4 +1,4 @@
-// document.body.classList.add("no-scroll");
+document.body.classList.add("no-scroll");
 const loader = document.getElementById("loader");
 const stamp = document.getElementById("loaderStamp");
 const stampText = document.getElementById("loaderStampText");
@@ -62,7 +62,7 @@ stamp.addEventListener("click", openEnvelope);
 stampText.addEventListener("click", openEnvelope);
 
 // ======================================= remove this ===============================================
-startScrollAnimations() 
+// startScrollAnimations() 
 // ======================================= remove this ===============================================
 
 
